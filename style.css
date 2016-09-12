@@ -1,0 +1,3784 @@
+/*!
+Theme Name: mytheme
+Theme URI: http://underscores.me/
+Author: vulong
+Author URI: http://underscores.me/
+Description: first theme wordpress
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: my-theme
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+mytheme is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+body {
+  margin: 0; }
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block; }
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline; }
+
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+[hidden],
+template {
+  display: none; }
+
+a {
+  background-color: transparent; }
+
+a:active,
+a:hover {
+  outline: 0; }
+
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+b,
+strong {
+  font-weight: bold; }
+
+dfn {
+  font-style: italic; }
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+mark {
+  background: #ff0;
+  color: #000; }
+
+small {
+  font-size: 80%; }
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+img {
+  border: 0; }
+
+svg:not(:root) {
+  overflow: hidden; }
+
+figure {
+  margin: 1em 40px; }
+
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+pre {
+  overflow: auto; }
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0; }
+
+button {
+  overflow: visible; }
+
+button,
+select {
+  text-transform: none; }
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer; }
+
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+input {
+  line-height: normal; }
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0; }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+legend {
+  border: 0;
+  padding: 0; }
+
+textarea {
+  overflow: auto; }
+
+optgroup {
+  font-weight: bold; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5; }
+
+h1, h2, h3, h4, h5, h6 {
+  clear: both; }
+
+p {
+  margin-bottom: 1.5em; }
+
+dfn, cite, em, i {
+  font-style: italic; }
+
+blockquote {
+  margin: 0 1.5em; }
+
+address {
+  margin: 0 0 1.5em; }
+
+pre {
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em; }
+
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem; }
+
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help; }
+
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none; }
+
+big {
+  font-size: 125%; }
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+  box-sizing: border-box; }
+
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit; }
+
+body {
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */ }
+
+blockquote, q {
+  quotes: "" ""; }
+  blockquote:before, blockquote:after, q:before, q:after {
+    content: ""; }
+
+hr {
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em; }
+
+ul, ol {
+  margin: 0 0 1.5em 3em; }
+
+ul {
+  list-style: disc; }
+
+ol {
+  list-style: decimal; }
+
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em; }
+
+dt {
+  font-weight: bold; }
+
+dd {
+  margin: 0 1.5em 1.5em; }
+
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */ }
+
+table {
+  margin: 0 0 1.5em;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: .6em 1em .4em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
+  button:hover,
+  input[type="button"]:hover,
+  input[type="reset"]:hover,
+  input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
+  button:active, button:focus,
+  input[type="button"]:active,
+  input[type="button"]:focus,
+  input[type="reset"]:active,
+  input[type="reset"]:focus,
+  input[type="submit"]:active,
+  input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px; }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="url"]:focus,
+  input[type="password"]:focus,
+  input[type="search"]:focus,
+  input[type="number"]:focus,
+  input[type="tel"]:focus,
+  input[type="range"]:focus,
+  input[type="date"]:focus,
+  input[type="month"]:focus,
+  input[type="week"]:focus,
+  input[type="time"]:focus,
+  input[type="datetime"]:focus,
+  input[type="datetime-local"]:focus,
+  input[type="color"]:focus,
+  textarea:focus {
+    color: #111; }
+
+select {
+  border: 1px solid #ccc; }
+
+textarea {
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  color: royalblue; }
+  a:visited {
+    color: purple; }
+  a:hover, a:focus, a:active {
+    color: midnightblue; }
+  a:focus {
+    outline: thin dotted; }
+  a:hover, a:active {
+    outline: 0; }
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%; }
+  .main-navigation ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding-left: 0; }
+    .main-navigation ul ul {
+      box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+      float: left;
+      position: absolute;
+      top: 1.5em;
+      left: -999em;
+      z-index: 99999; }
+      .main-navigation ul ul ul {
+        left: -999em;
+        top: 0; }
+      .main-navigation ul ul li:hover > ul,
+      .main-navigation ul ul li.focus > ul {
+        left: 100%; }
+      .main-navigation ul ul a {
+        width: 200px; }
+    .main-navigation ul li:hover > ul,
+    .main-navigation ul li.focus > ul {
+      left: auto; }
+  .main-navigation li {
+    float: left;
+    position: relative; }
+  .main-navigation a {
+    display: block;
+    text-decoration: none; }
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block; }
+
+@media screen and (min-width: 37.5em) {
+  .menu-toggle {
+    display: none; }
+  .main-navigation ul {
+    display: block; } }
+
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden; }
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%; }
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%; }
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */ }
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0; }
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em; }
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em; }
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed; }
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both; }
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */ }
+  .widget select {
+    max-width: 100%; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+  display: block; }
+
+.hentry {
+  margin: 0 0 1.5em; }
+
+.byline,
+.updated:not(.published) {
+  display: none; }
+
+.single .byline,
+.group-blog .byline {
+  display: inline; }
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em; }
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+  word-wrap: break-word; }
+
+.bypostauthor {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none; }
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+  display: block; }
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0; }
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%; }
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%; }
+  .wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .wp-caption .wp-caption-text {
+    margin: 0.8075em 0; }
+
+.wp-caption-text {
+  text-align: center; }
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery {
+  margin-bottom: 1.5em; }
+
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%; }
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%; }
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%; }
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%; }
+  .gallery-columns-5 .gallery-item {
+    max-width: 20%; }
+  .gallery-columns-6 .gallery-item {
+    max-width: 16.66%; }
+  .gallery-columns-7 .gallery-item {
+    max-width: 14.28%; }
+  .gallery-columns-8 .gallery-item {
+    max-width: 12.5%; }
+  .gallery-columns-9 .gallery-item {
+    max-width: 11.11%; }
+
+.gallery-caption {
+  display: block; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px; }
+
+.main-navigation ul ul a {
+  width: unset; }
+
+a:active {
+  color: unset; }
+
+a:visited {
+  color: unset; }
+
+a:focus {
+  color: unset; }
+
+.can-giua {
+  margin-right: auto !important;
+  margin-left: auto !important; }
+
+/*
+*
+*--------------------Header----------------------*
+*
+*/
+header {
+  height: 80px;
+  background-color: #76c7c0;
+  background-image: url("http://localhost/wordpress/wp-content/uploads/2016/07/bgopacity.png");
+  background-repeat: repeat-x;
+  background-position: bottom left;
+  position: relative; }
+  header .wrap-content-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 10; }
+  header nav {
+    font-weight: 600;
+    text-transform: uppercase; }
+    header nav ul li {
+      height: 57px; }
+      header nav ul li a {
+        color: #fff;
+        text-transform: uppercase;
+        font-weight: 600;
+        padding: 10px 27px;
+        border-radius: 5px;
+        text-decoration: none; }
+        header nav ul li a:hover {
+          background-color: #e8645a;
+          box-shadow: 0px 4px 0px 0px #e2534b; }
+    header nav ul li.menu-item-has-children a {
+      color: #fff; }
+      header nav ul li.menu-item-has-children a:before {
+        content: "\f107";
+        font-family: FontAwesome;
+        margin-left: -16px;
+        margin-right: 10px; }
+    header nav ul li.menu-item-has-children ul.sub-menu {
+      min-width: 250px;
+      background-color: #e2534b;
+      margin-top: 37px;
+      border-radius: 5px;
+      padding: 5px; }
+      header nav ul li.menu-item-has-children ul.sub-menu li {
+        height: unset;
+        margin-bottom: 8px; }
+        header nav ul li.menu-item-has-children ul.sub-menu li a {
+          background-color: #e5655d; }
+          header nav ul li.menu-item-has-children ul.sub-menu li a:before {
+            font-family: FontAwesome;
+            content: "\f105"; }
+          header nav ul li.menu-item-has-children ul.sub-menu li a:hover {
+            background-color: #76c7c0; }
+      header nav ul li.menu-item-has-children ul.sub-menu:before {
+        font-family: FontAwesome;
+        content: "\f0d8";
+        position: absolute;
+        left: 10px;
+        top: -20px;
+        font-size: 20px;
+        color: #e8645a; }
+    header nav ul li.menu-item-has-children:hover a {
+      background-color: #e8645a;
+      box-shadow: 0px 4px 0px 0px #e2534b; }
+    header nav .current_page_item a {
+      background-color: #62a29e;
+      box-shadow: 0px 4px 0px 0px #528b86; }
+
+.search-icon {
+  position: absolute;
+  top: 130%;
+  left: 99%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 12px; }
+  .search-icon i {
+    padding: 12px; }
+    .search-icon i:hover {
+      background-color: #e8645a;
+      box-shadow: 0 4px 0 0 #e2534b;
+      border-radius: 5px; }
+
+#search-2 {
+  visibility: hidden; }
+
+input.search-submit {
+  font-size: 13px;
+  line-height: 1.4;
+  font-family: "Open Sans", sans-serif; }
+
+input.search-field {
+  height: 32px;
+  font-size: 13px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal; }
+
+/*
+*
+*--------------------Slider----------------------*
+*
+*/
+.custom.tparrows {
+  background-color: #e8645a;
+  width: 50px;
+  height: 60px;
+  border-radius: 5px; }
+  .custom.tparrows:hover {
+    background-color: #76c7c0; }
+
+.custom.tparrows.tp-leftarrow::before {
+  content: '\f100';
+  font-family: FontAwesome;
+  font-size: 40px;
+  margin-top: 7px; }
+
+.custom.tparrows.tp-rightarrow::before {
+  content: '\f101';
+  font-family: FontAwesome;
+  font-size: 40px;
+  margin-top: 7px; }
+
+.custom .tp-bullet {
+  width: 60px;
+  height: 5px; }
+  .custom .tp-bullet:hover {
+    background-color: #e8645a; }
+
+.custom .tp-bullet.selected {
+  background-color: #e8645a; }
+
+/*
+*
+*--------------------Main Content----------------------*
+*
+*/
+.box-content-reset-padding {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 80px; }
+
+.box-content-column {
+  height: 307px; }
+  .box-content-column .vc_column-inner {
+    box-shadow: 0px 4px 0px 0px gainsboro; }
+
+.box-content {
+  position: relative;
+  text-align: center; }
+  .box-content i {
+    font-size: 4em; }
+  .box-content button {
+    position: absolute;
+    left: 70px;
+    bottom: -73px;
+    box-shadow: unset;
+    text-shadow: unset;
+    color: #fff; }
+  .box-content .content-box {
+    height: 77px; }
+
+/*-------Main content bottom------------*/
+.why-choose-us ul {
+  list-style: none;
+  margin: unset;
+  padding: unset; }
+  .why-choose-us ul li:before {
+    font-family: FontAwesome;
+    content: '\f061';
+    color: #e8645a;
+    margin-right: 5px; }
+
+.owl-item p {
+  position: relative;
+  background-color: #fff;
+  border-radius: 7px;
+  padding: 5px;
+  margin: unset; }
+  .owl-item p:before {
+    position: absolute;
+    content: " ";
+    bottom: -25px;
+    left: 15px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: solid 15px transparent;
+    border-right-color: #fff;
+    border-top-color: #fff; }
+
+.owl-item span {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 53px;
+  margin-top: 10px; }
+
+#owl-carousel-bottom-main .owl-wrapper-outer {
+  height: 90px; }
+
+/*
+*
+*--------------------Chart Info----------------------*
+*
+*/
+/* body{
+  background-color: $body-bg;
+  font-family:arial, sans-serif;
+  color: $text-color;
+} */
+.chart {
+  display: inline-block;
+  margin: 30px 12px; }
+  .chart p {
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px; }
+
+.pie-wrapper {
+  position: relative;
+  width: 110px;
+  height: 55px;
+  overflow: hidden; }
+  .pie-wrapper .arc, .pie-wrapper:before {
+    content: '';
+    width: 110px;
+    height: 55px;
+    position: absolute;
+    -ms-transform-origin: 50% 0%;
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    left: 0;
+    box-sizing: border-box; }
+  .pie-wrapper:before {
+    border: 20px solid #76C7C0;
+    border-bottom: none;
+    top: 0;
+    z-index: 1;
+    border-radius: 200px 200px 0 0; }
+  .pie-wrapper .arc {
+    border: 20px solid #47CF73;
+    border-top: none;
+    border-radius: 0 0 200px 200px;
+    top: 100%;
+    z-index: 2; }
+    .pie-wrapper .arc::before {
+      content: "";
+      height: 1px;
+      position: absolute;
+      top: 0px; }
+  .pie-wrapper .score {
+    color: #7F8C8D;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    width: 110px;
+    text-align: center;
+    margin-top: 26.5px; }
+
+.arc[data-value="1"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(1.8deg);
+  -moz-transform: rotate(1.8deg);
+  -ms-transform: rotate(1.8deg);
+  -o-transform: rotate(1.8deg);
+  transform: rotate(1.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="1"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="1"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="2"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(3.6deg);
+  -moz-transform: rotate(3.6deg);
+  -ms-transform: rotate(3.6deg);
+  -o-transform: rotate(3.6deg);
+  transform: rotate(3.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="2"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="2"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="3"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(5.4deg);
+  -moz-transform: rotate(5.4deg);
+  -ms-transform: rotate(5.4deg);
+  -o-transform: rotate(5.4deg);
+  transform: rotate(5.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="3"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="3"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="4"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(7.2deg);
+  -moz-transform: rotate(7.2deg);
+  -ms-transform: rotate(7.2deg);
+  -o-transform: rotate(7.2deg);
+  transform: rotate(7.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="4"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="4"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="5"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(9deg);
+  -moz-transform: rotate(9deg);
+  -ms-transform: rotate(9deg);
+  -o-transform: rotate(9deg);
+  transform: rotate(9deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="5"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="5"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="6"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(10.8deg);
+  -moz-transform: rotate(10.8deg);
+  -ms-transform: rotate(10.8deg);
+  -o-transform: rotate(10.8deg);
+  transform: rotate(10.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="6"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="6"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="7"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(12.6deg);
+  -moz-transform: rotate(12.6deg);
+  -ms-transform: rotate(12.6deg);
+  -o-transform: rotate(12.6deg);
+  transform: rotate(12.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="7"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="7"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="8"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(14.4deg);
+  -moz-transform: rotate(14.4deg);
+  -ms-transform: rotate(14.4deg);
+  -o-transform: rotate(14.4deg);
+  transform: rotate(14.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="8"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="8"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="9"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(16.2deg);
+  -moz-transform: rotate(16.2deg);
+  -ms-transform: rotate(16.2deg);
+  -o-transform: rotate(16.2deg);
+  transform: rotate(16.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="9"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="9"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="10"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(18deg);
+  -moz-transform: rotate(18deg);
+  -ms-transform: rotate(18deg);
+  -o-transform: rotate(18deg);
+  transform: rotate(18deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="10"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="10"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="11"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(19.8deg);
+  -moz-transform: rotate(19.8deg);
+  -ms-transform: rotate(19.8deg);
+  -o-transform: rotate(19.8deg);
+  transform: rotate(19.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="11"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="11"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="12"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(21.6deg);
+  -moz-transform: rotate(21.6deg);
+  -ms-transform: rotate(21.6deg);
+  -o-transform: rotate(21.6deg);
+  transform: rotate(21.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="12"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="12"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="13"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(23.4deg);
+  -moz-transform: rotate(23.4deg);
+  -ms-transform: rotate(23.4deg);
+  -o-transform: rotate(23.4deg);
+  transform: rotate(23.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="13"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="13"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="14"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(25.2deg);
+  -moz-transform: rotate(25.2deg);
+  -ms-transform: rotate(25.2deg);
+  -o-transform: rotate(25.2deg);
+  transform: rotate(25.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="14"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="14"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="15"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(27deg);
+  -moz-transform: rotate(27deg);
+  -ms-transform: rotate(27deg);
+  -o-transform: rotate(27deg);
+  transform: rotate(27deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="15"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="15"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="16"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(28.8deg);
+  -moz-transform: rotate(28.8deg);
+  -ms-transform: rotate(28.8deg);
+  -o-transform: rotate(28.8deg);
+  transform: rotate(28.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="16"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="16"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="17"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(30.6deg);
+  -moz-transform: rotate(30.6deg);
+  -ms-transform: rotate(30.6deg);
+  -o-transform: rotate(30.6deg);
+  transform: rotate(30.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="17"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="17"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="18"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(32.4deg);
+  -moz-transform: rotate(32.4deg);
+  -ms-transform: rotate(32.4deg);
+  -o-transform: rotate(32.4deg);
+  transform: rotate(32.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="18"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="18"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="19"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(34.2deg);
+  -moz-transform: rotate(34.2deg);
+  -ms-transform: rotate(34.2deg);
+  -o-transform: rotate(34.2deg);
+  transform: rotate(34.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="19"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="19"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="20"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(36deg);
+  -moz-transform: rotate(36deg);
+  -ms-transform: rotate(36deg);
+  -o-transform: rotate(36deg);
+  transform: rotate(36deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="20"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="20"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="21"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(37.8deg);
+  -moz-transform: rotate(37.8deg);
+  -ms-transform: rotate(37.8deg);
+  -o-transform: rotate(37.8deg);
+  transform: rotate(37.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="21"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="21"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="22"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(39.6deg);
+  -moz-transform: rotate(39.6deg);
+  -ms-transform: rotate(39.6deg);
+  -o-transform: rotate(39.6deg);
+  transform: rotate(39.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="22"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="22"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="23"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(41.4deg);
+  -moz-transform: rotate(41.4deg);
+  -ms-transform: rotate(41.4deg);
+  -o-transform: rotate(41.4deg);
+  transform: rotate(41.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="23"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="23"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="24"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(43.2deg);
+  -moz-transform: rotate(43.2deg);
+  -ms-transform: rotate(43.2deg);
+  -o-transform: rotate(43.2deg);
+  transform: rotate(43.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="24"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="24"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="25"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="25"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="25"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="26"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(46.8deg);
+  -moz-transform: rotate(46.8deg);
+  -ms-transform: rotate(46.8deg);
+  -o-transform: rotate(46.8deg);
+  transform: rotate(46.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="26"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="26"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="27"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(48.6deg);
+  -moz-transform: rotate(48.6deg);
+  -ms-transform: rotate(48.6deg);
+  -o-transform: rotate(48.6deg);
+  transform: rotate(48.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="27"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="27"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="28"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(50.4deg);
+  -moz-transform: rotate(50.4deg);
+  -ms-transform: rotate(50.4deg);
+  -o-transform: rotate(50.4deg);
+  transform: rotate(50.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="28"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="28"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="29"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(52.2deg);
+  -moz-transform: rotate(52.2deg);
+  -ms-transform: rotate(52.2deg);
+  -o-transform: rotate(52.2deg);
+  transform: rotate(52.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="29"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="29"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="30"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(54deg);
+  -moz-transform: rotate(54deg);
+  -ms-transform: rotate(54deg);
+  -o-transform: rotate(54deg);
+  transform: rotate(54deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="30"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="30"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="31"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(55.8deg);
+  -moz-transform: rotate(55.8deg);
+  -ms-transform: rotate(55.8deg);
+  -o-transform: rotate(55.8deg);
+  transform: rotate(55.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="31"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="31"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="32"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(57.6deg);
+  -moz-transform: rotate(57.6deg);
+  -ms-transform: rotate(57.6deg);
+  -o-transform: rotate(57.6deg);
+  transform: rotate(57.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="32"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="32"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="33"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(59.4deg);
+  -moz-transform: rotate(59.4deg);
+  -ms-transform: rotate(59.4deg);
+  -o-transform: rotate(59.4deg);
+  transform: rotate(59.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="33"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="33"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="34"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(61.2deg);
+  -moz-transform: rotate(61.2deg);
+  -ms-transform: rotate(61.2deg);
+  -o-transform: rotate(61.2deg);
+  transform: rotate(61.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="34"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="34"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="35"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(63deg);
+  -moz-transform: rotate(63deg);
+  -ms-transform: rotate(63deg);
+  -o-transform: rotate(63deg);
+  transform: rotate(63deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="35"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="35"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="36"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(64.8deg);
+  -moz-transform: rotate(64.8deg);
+  -ms-transform: rotate(64.8deg);
+  -o-transform: rotate(64.8deg);
+  transform: rotate(64.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="36"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="36"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="37"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(66.6deg);
+  -moz-transform: rotate(66.6deg);
+  -ms-transform: rotate(66.6deg);
+  -o-transform: rotate(66.6deg);
+  transform: rotate(66.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="37"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="37"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="38"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(68.4deg);
+  -moz-transform: rotate(68.4deg);
+  -ms-transform: rotate(68.4deg);
+  -o-transform: rotate(68.4deg);
+  transform: rotate(68.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="38"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="38"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="39"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(70.2deg);
+  -moz-transform: rotate(70.2deg);
+  -ms-transform: rotate(70.2deg);
+  -o-transform: rotate(70.2deg);
+  transform: rotate(70.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="39"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="39"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="40"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(72deg);
+  -moz-transform: rotate(72deg);
+  -ms-transform: rotate(72deg);
+  -o-transform: rotate(72deg);
+  transform: rotate(72deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="40"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="40"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="41"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(73.8deg);
+  -moz-transform: rotate(73.8deg);
+  -ms-transform: rotate(73.8deg);
+  -o-transform: rotate(73.8deg);
+  transform: rotate(73.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="41"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="41"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="42"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(75.6deg);
+  -moz-transform: rotate(75.6deg);
+  -ms-transform: rotate(75.6deg);
+  -o-transform: rotate(75.6deg);
+  transform: rotate(75.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="42"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="42"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="43"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(77.4deg);
+  -moz-transform: rotate(77.4deg);
+  -ms-transform: rotate(77.4deg);
+  -o-transform: rotate(77.4deg);
+  transform: rotate(77.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="43"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="43"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="44"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(79.2deg);
+  -moz-transform: rotate(79.2deg);
+  -ms-transform: rotate(79.2deg);
+  -o-transform: rotate(79.2deg);
+  transform: rotate(79.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="44"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="44"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="45"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(81deg);
+  -moz-transform: rotate(81deg);
+  -ms-transform: rotate(81deg);
+  -o-transform: rotate(81deg);
+  transform: rotate(81deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="45"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="45"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="46"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(82.8deg);
+  -moz-transform: rotate(82.8deg);
+  -ms-transform: rotate(82.8deg);
+  -o-transform: rotate(82.8deg);
+  transform: rotate(82.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="46"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="46"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="47"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(84.6deg);
+  -moz-transform: rotate(84.6deg);
+  -ms-transform: rotate(84.6deg);
+  -o-transform: rotate(84.6deg);
+  transform: rotate(84.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="47"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="47"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="48"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(86.4deg);
+  -moz-transform: rotate(86.4deg);
+  -ms-transform: rotate(86.4deg);
+  -o-transform: rotate(86.4deg);
+  transform: rotate(86.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="48"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="48"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="49"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(88.2deg);
+  -moz-transform: rotate(88.2deg);
+  -ms-transform: rotate(88.2deg);
+  -o-transform: rotate(88.2deg);
+  transform: rotate(88.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="49"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="49"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="50"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="50"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="50"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="51"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(91.8deg);
+  -moz-transform: rotate(91.8deg);
+  -ms-transform: rotate(91.8deg);
+  -o-transform: rotate(91.8deg);
+  transform: rotate(91.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="51"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="51"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="52"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(93.6deg);
+  -moz-transform: rotate(93.6deg);
+  -ms-transform: rotate(93.6deg);
+  -o-transform: rotate(93.6deg);
+  transform: rotate(93.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="52"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="52"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="53"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(95.4deg);
+  -moz-transform: rotate(95.4deg);
+  -ms-transform: rotate(95.4deg);
+  -o-transform: rotate(95.4deg);
+  transform: rotate(95.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="53"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="53"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="54"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(97.2deg);
+  -moz-transform: rotate(97.2deg);
+  -ms-transform: rotate(97.2deg);
+  -o-transform: rotate(97.2deg);
+  transform: rotate(97.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="54"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="54"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="55"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(99deg);
+  -moz-transform: rotate(99deg);
+  -ms-transform: rotate(99deg);
+  -o-transform: rotate(99deg);
+  transform: rotate(99deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="55"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="55"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="56"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(100.8deg);
+  -moz-transform: rotate(100.8deg);
+  -ms-transform: rotate(100.8deg);
+  -o-transform: rotate(100.8deg);
+  transform: rotate(100.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="56"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="56"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="57"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(102.6deg);
+  -moz-transform: rotate(102.6deg);
+  -ms-transform: rotate(102.6deg);
+  -o-transform: rotate(102.6deg);
+  transform: rotate(102.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="57"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="57"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="58"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(104.4deg);
+  -moz-transform: rotate(104.4deg);
+  -ms-transform: rotate(104.4deg);
+  -o-transform: rotate(104.4deg);
+  transform: rotate(104.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="58"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="58"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="59"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(106.2deg);
+  -moz-transform: rotate(106.2deg);
+  -ms-transform: rotate(106.2deg);
+  -o-transform: rotate(106.2deg);
+  transform: rotate(106.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="59"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="59"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="60"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(108deg);
+  -moz-transform: rotate(108deg);
+  -ms-transform: rotate(108deg);
+  -o-transform: rotate(108deg);
+  transform: rotate(108deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="60"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="60"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="61"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(109.8deg);
+  -moz-transform: rotate(109.8deg);
+  -ms-transform: rotate(109.8deg);
+  -o-transform: rotate(109.8deg);
+  transform: rotate(109.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="61"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="61"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="62"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(111.6deg);
+  -moz-transform: rotate(111.6deg);
+  -ms-transform: rotate(111.6deg);
+  -o-transform: rotate(111.6deg);
+  transform: rotate(111.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="62"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="62"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="63"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(113.4deg);
+  -moz-transform: rotate(113.4deg);
+  -ms-transform: rotate(113.4deg);
+  -o-transform: rotate(113.4deg);
+  transform: rotate(113.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="63"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="63"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="64"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(115.2deg);
+  -moz-transform: rotate(115.2deg);
+  -ms-transform: rotate(115.2deg);
+  -o-transform: rotate(115.2deg);
+  transform: rotate(115.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="64"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="64"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="65"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(117deg);
+  -moz-transform: rotate(117deg);
+  -ms-transform: rotate(117deg);
+  -o-transform: rotate(117deg);
+  transform: rotate(117deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="65"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="65"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="66"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(118.8deg);
+  -moz-transform: rotate(118.8deg);
+  -ms-transform: rotate(118.8deg);
+  -o-transform: rotate(118.8deg);
+  transform: rotate(118.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="66"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="66"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="67"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(120.6deg);
+  -moz-transform: rotate(120.6deg);
+  -ms-transform: rotate(120.6deg);
+  -o-transform: rotate(120.6deg);
+  transform: rotate(120.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="67"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="67"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="68"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(122.4deg);
+  -moz-transform: rotate(122.4deg);
+  -ms-transform: rotate(122.4deg);
+  -o-transform: rotate(122.4deg);
+  transform: rotate(122.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="68"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="68"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="69"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(124.2deg);
+  -moz-transform: rotate(124.2deg);
+  -ms-transform: rotate(124.2deg);
+  -o-transform: rotate(124.2deg);
+  transform: rotate(124.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="69"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="69"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="70"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(126deg);
+  -moz-transform: rotate(126deg);
+  -ms-transform: rotate(126deg);
+  -o-transform: rotate(126deg);
+  transform: rotate(126deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="70"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="70"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="71"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(127.8deg);
+  -moz-transform: rotate(127.8deg);
+  -ms-transform: rotate(127.8deg);
+  -o-transform: rotate(127.8deg);
+  transform: rotate(127.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="71"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="71"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="72"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(129.6deg);
+  -moz-transform: rotate(129.6deg);
+  -ms-transform: rotate(129.6deg);
+  -o-transform: rotate(129.6deg);
+  transform: rotate(129.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="72"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="72"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="73"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(131.4deg);
+  -moz-transform: rotate(131.4deg);
+  -ms-transform: rotate(131.4deg);
+  -o-transform: rotate(131.4deg);
+  transform: rotate(131.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="73"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="73"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="74"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(133.2deg);
+  -moz-transform: rotate(133.2deg);
+  -ms-transform: rotate(133.2deg);
+  -o-transform: rotate(133.2deg);
+  transform: rotate(133.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="74"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="74"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="75"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="75"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="75"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="76"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(136.8deg);
+  -moz-transform: rotate(136.8deg);
+  -ms-transform: rotate(136.8deg);
+  -o-transform: rotate(136.8deg);
+  transform: rotate(136.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="76"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="76"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="77"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(138.6deg);
+  -moz-transform: rotate(138.6deg);
+  -ms-transform: rotate(138.6deg);
+  -o-transform: rotate(138.6deg);
+  transform: rotate(138.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="77"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="77"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="78"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(140.4deg);
+  -moz-transform: rotate(140.4deg);
+  -ms-transform: rotate(140.4deg);
+  -o-transform: rotate(140.4deg);
+  transform: rotate(140.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="78"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="78"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="79"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(142.2deg);
+  -moz-transform: rotate(142.2deg);
+  -ms-transform: rotate(142.2deg);
+  -o-transform: rotate(142.2deg);
+  transform: rotate(142.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="79"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="79"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="80"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(144deg);
+  -moz-transform: rotate(144deg);
+  -ms-transform: rotate(144deg);
+  -o-transform: rotate(144deg);
+  transform: rotate(144deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="80"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="80"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="81"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(145.8deg);
+  -moz-transform: rotate(145.8deg);
+  -ms-transform: rotate(145.8deg);
+  -o-transform: rotate(145.8deg);
+  transform: rotate(145.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="81"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="81"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="82"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(147.6deg);
+  -moz-transform: rotate(147.6deg);
+  -ms-transform: rotate(147.6deg);
+  -o-transform: rotate(147.6deg);
+  transform: rotate(147.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="82"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="82"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="83"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(149.4deg);
+  -moz-transform: rotate(149.4deg);
+  -ms-transform: rotate(149.4deg);
+  -o-transform: rotate(149.4deg);
+  transform: rotate(149.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="83"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="83"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="84"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(151.2deg);
+  -moz-transform: rotate(151.2deg);
+  -ms-transform: rotate(151.2deg);
+  -o-transform: rotate(151.2deg);
+  transform: rotate(151.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="84"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="84"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="85"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(153deg);
+  -moz-transform: rotate(153deg);
+  -ms-transform: rotate(153deg);
+  -o-transform: rotate(153deg);
+  transform: rotate(153deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="85"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="85"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="86"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(154.8deg);
+  -moz-transform: rotate(154.8deg);
+  -ms-transform: rotate(154.8deg);
+  -o-transform: rotate(154.8deg);
+  transform: rotate(154.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="86"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="86"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="87"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(156.6deg);
+  -moz-transform: rotate(156.6deg);
+  -ms-transform: rotate(156.6deg);
+  -o-transform: rotate(156.6deg);
+  transform: rotate(156.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="87"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="87"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="88"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(158.4deg);
+  -moz-transform: rotate(158.4deg);
+  -ms-transform: rotate(158.4deg);
+  -o-transform: rotate(158.4deg);
+  transform: rotate(158.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="88"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="88"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="89"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(160.2deg);
+  -moz-transform: rotate(160.2deg);
+  -ms-transform: rotate(160.2deg);
+  -o-transform: rotate(160.2deg);
+  transform: rotate(160.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="89"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="89"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="90"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(162deg);
+  -moz-transform: rotate(162deg);
+  -ms-transform: rotate(162deg);
+  -o-transform: rotate(162deg);
+  transform: rotate(162deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="90"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="90"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="91"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(163.8deg);
+  -moz-transform: rotate(163.8deg);
+  -ms-transform: rotate(163.8deg);
+  -o-transform: rotate(163.8deg);
+  transform: rotate(163.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="91"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="91"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="92"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(165.6deg);
+  -moz-transform: rotate(165.6deg);
+  -ms-transform: rotate(165.6deg);
+  -o-transform: rotate(165.6deg);
+  transform: rotate(165.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="92"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="92"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="93"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(167.4deg);
+  -moz-transform: rotate(167.4deg);
+  -ms-transform: rotate(167.4deg);
+  -o-transform: rotate(167.4deg);
+  transform: rotate(167.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="93"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="93"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="94"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(169.2deg);
+  -moz-transform: rotate(169.2deg);
+  -ms-transform: rotate(169.2deg);
+  -o-transform: rotate(169.2deg);
+  transform: rotate(169.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="94"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="94"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="95"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(171deg);
+  -moz-transform: rotate(171deg);
+  -ms-transform: rotate(171deg);
+  -o-transform: rotate(171deg);
+  transform: rotate(171deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="95"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="95"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="96"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(172.8deg);
+  -moz-transform: rotate(172.8deg);
+  -ms-transform: rotate(172.8deg);
+  -o-transform: rotate(172.8deg);
+  transform: rotate(172.8deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="96"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="96"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="97"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(174.6deg);
+  -moz-transform: rotate(174.6deg);
+  -ms-transform: rotate(174.6deg);
+  -o-transform: rotate(174.6deg);
+  transform: rotate(174.6deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="97"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="97"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="98"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(176.4deg);
+  -moz-transform: rotate(176.4deg);
+  -ms-transform: rotate(176.4deg);
+  -o-transform: rotate(176.4deg);
+  transform: rotate(176.4deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="98"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="98"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="99"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(178.2deg);
+  -moz-transform: rotate(178.2deg);
+  -ms-transform: rotate(178.2deg);
+  -o-transform: rotate(178.2deg);
+  transform: rotate(178.2deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="99"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="99"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="100"] {
+  -webkit-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -moz-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -ms-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -o-animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  animation: compact(fill 2s, false, false, false, false, false, false, false, false, false);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  transition: All 5s ease;
+  border-color: #47CF73; }
+  .arc[data-value="100"]:after {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px; }
+  .arc[data-value="100"]::before {
+    background-color: #47CF73; }
+
+.arc[data-value="1"] {
+  border-color: #FF3C41; }
+  .arc[data-value="1"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="2"] {
+  border-color: #FF3C41; }
+  .arc[data-value="2"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="3"] {
+  border-color: #FF3C41; }
+  .arc[data-value="3"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="4"] {
+  border-color: #FF3C41; }
+  .arc[data-value="4"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="5"] {
+  border-color: #FF3C41; }
+  .arc[data-value="5"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="6"] {
+  border-color: #FF3C41; }
+  .arc[data-value="6"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="7"] {
+  border-color: #FF3C41; }
+  .arc[data-value="7"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="8"] {
+  border-color: #FF3C41; }
+  .arc[data-value="8"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="9"] {
+  border-color: #FF3C41; }
+  .arc[data-value="9"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="10"] {
+  border-color: #FF3C41; }
+  .arc[data-value="10"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="11"] {
+  border-color: #FF3C41; }
+  .arc[data-value="11"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="12"] {
+  border-color: #FF3C41; }
+  .arc[data-value="12"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="13"] {
+  border-color: #FF3C41; }
+  .arc[data-value="13"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="14"] {
+  border-color: #FF3C41; }
+  .arc[data-value="14"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="15"] {
+  border-color: #FF3C41; }
+  .arc[data-value="15"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="16"] {
+  border-color: #FF3C41; }
+  .arc[data-value="16"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="17"] {
+  border-color: #FF3C41; }
+  .arc[data-value="17"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="18"] {
+  border-color: #FF3C41; }
+  .arc[data-value="18"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="19"] {
+  border-color: #FF3C41; }
+  .arc[data-value="19"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="20"] {
+  border-color: #FF3C41; }
+  .arc[data-value="20"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="21"] {
+  border-color: #FF3C41; }
+  .arc[data-value="21"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="22"] {
+  border-color: #FF3C41; }
+  .arc[data-value="22"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="23"] {
+  border-color: #FF3C41; }
+  .arc[data-value="23"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="24"] {
+  border-color: #FF3C41; }
+  .arc[data-value="24"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="25"] {
+  border-color: #FF3C41; }
+  .arc[data-value="25"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="26"] {
+  border-color: #FF3C41; }
+  .arc[data-value="26"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="27"] {
+  border-color: #FF3C41; }
+  .arc[data-value="27"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="28"] {
+  border-color: #FF3C41; }
+  .arc[data-value="28"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="29"] {
+  border-color: #FF3C41; }
+  .arc[data-value="29"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="30"] {
+  border-color: #FF3C41; }
+  .arc[data-value="30"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="31"] {
+  border-color: #FF3C41; }
+  .arc[data-value="31"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="32"] {
+  border-color: #FF3C41; }
+  .arc[data-value="32"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="33"] {
+  border-color: #FF3C41; }
+  .arc[data-value="33"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="34"] {
+  border-color: #FF3C41; }
+  .arc[data-value="34"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="35"] {
+  border-color: #FF3C41; }
+  .arc[data-value="35"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="36"] {
+  border-color: #FF3C41; }
+  .arc[data-value="36"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="37"] {
+  border-color: #FF3C41; }
+  .arc[data-value="37"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="38"] {
+  border-color: #FF3C41; }
+  .arc[data-value="38"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="39"] {
+  border-color: #FF3C41; }
+  .arc[data-value="39"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="40"] {
+  border-color: #FF3C41; }
+  .arc[data-value="40"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="41"] {
+  border-color: #FF3C41; }
+  .arc[data-value="41"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="42"] {
+  border-color: #FF3C41; }
+  .arc[data-value="42"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="43"] {
+  border-color: #FF3C41; }
+  .arc[data-value="43"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="44"] {
+  border-color: #FF3C41; }
+  .arc[data-value="44"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="45"] {
+  border-color: #FF3C41; }
+  .arc[data-value="45"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="46"] {
+  border-color: #FF3C41; }
+  .arc[data-value="46"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="47"] {
+  border-color: #FF3C41; }
+  .arc[data-value="47"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="48"] {
+  border-color: #FF3C41; }
+  .arc[data-value="48"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="49"] {
+  border-color: #FF3C41; }
+  .arc[data-value="49"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="50"] {
+  border-color: #FF3C41; }
+  .arc[data-value="50"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="51"] {
+  border-color: #FF3C41; }
+  .arc[data-value="51"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="52"] {
+  border-color: #FF3C41; }
+  .arc[data-value="52"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="53"] {
+  border-color: #FF3C41; }
+  .arc[data-value="53"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="54"] {
+  border-color: #FF3C41; }
+  .arc[data-value="54"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="55"] {
+  border-color: #FF3C41; }
+  .arc[data-value="55"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="56"] {
+  border-color: #FF3C41; }
+  .arc[data-value="56"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="57"] {
+  border-color: #FF3C41; }
+  .arc[data-value="57"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="58"] {
+  border-color: #FF3C41; }
+  .arc[data-value="58"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="59"] {
+  border-color: #FF3C41; }
+  .arc[data-value="59"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="60"] {
+  border-color: #FF3C41; }
+  .arc[data-value="60"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="61"] {
+  border-color: #FF3C41; }
+  .arc[data-value="61"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="62"] {
+  border-color: #FF3C41; }
+  .arc[data-value="62"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="63"] {
+  border-color: #FF3C41; }
+  .arc[data-value="63"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="64"] {
+  border-color: #FF3C41; }
+  .arc[data-value="64"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="65"] {
+  border-color: #FF3C41; }
+  .arc[data-value="65"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="66"] {
+  border-color: #FF3C41; }
+  .arc[data-value="66"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="67"] {
+  border-color: #FF3C41; }
+  .arc[data-value="67"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="68"] {
+  border-color: #FF3C41; }
+  .arc[data-value="68"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="69"] {
+  border-color: #FF3C41; }
+  .arc[data-value="69"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="70"] {
+  border-color: #FF3C41; }
+  .arc[data-value="70"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="71"] {
+  border-color: #FF3C41; }
+  .arc[data-value="71"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="72"] {
+  border-color: #FF3C41; }
+  .arc[data-value="72"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="73"] {
+  border-color: #FF3C41; }
+  .arc[data-value="73"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="74"] {
+  border-color: #FF3C41; }
+  .arc[data-value="74"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="75"] {
+  border-color: #FF3C41; }
+  .arc[data-value="75"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="76"] {
+  border-color: #FF3C41; }
+  .arc[data-value="76"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="77"] {
+  border-color: #FF3C41; }
+  .arc[data-value="77"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="78"] {
+  border-color: #FF3C41; }
+  .arc[data-value="78"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="79"] {
+  border-color: #FF3C41; }
+  .arc[data-value="79"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="80"] {
+  border-color: #FF3C41; }
+  .arc[data-value="80"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="81"] {
+  border-color: #FF3C41; }
+  .arc[data-value="81"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="82"] {
+  border-color: #FF3C41; }
+  .arc[data-value="82"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="83"] {
+  border-color: #FF3C41; }
+  .arc[data-value="83"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="84"] {
+  border-color: #FF3C41; }
+  .arc[data-value="84"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="85"] {
+  border-color: #FF3C41; }
+  .arc[data-value="85"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="86"] {
+  border-color: #FF3C41; }
+  .arc[data-value="86"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="87"] {
+  border-color: #FF3C41; }
+  .arc[data-value="87"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="88"] {
+  border-color: #FF3C41; }
+  .arc[data-value="88"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="89"] {
+  border-color: #FF3C41; }
+  .arc[data-value="89"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="90"] {
+  border-color: #FF3C41; }
+  .arc[data-value="90"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="91"] {
+  border-color: #FF3C41; }
+  .arc[data-value="91"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="92"] {
+  border-color: #FF3C41; }
+  .arc[data-value="92"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="93"] {
+  border-color: #FF3C41; }
+  .arc[data-value="93"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="94"] {
+  border-color: #FF3C41; }
+  .arc[data-value="94"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="95"] {
+  border-color: #FF3C41; }
+  .arc[data-value="95"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="96"] {
+  border-color: #FF3C41; }
+  .arc[data-value="96"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="97"] {
+  border-color: #FF3C41; }
+  .arc[data-value="97"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="98"] {
+  border-color: #FF3C41; }
+  .arc[data-value="98"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="99"] {
+  border-color: #FF3C41; }
+  .arc[data-value="99"]::before {
+    background-color: #FF3C41; }
+
+.arc[data-value="100"] {
+  border-color: #FF3C41; }
+  .arc[data-value="100"]::before {
+    background-color: #FF3C41; }
+
+span.score {
+  width: 20px;
+  height: 20px;
+  display: inline-block; }
+  span.score.red {
+    background-color: #FF3C41; }
+
+@-moz-keyframes fill {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-color: #FF3C41; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-color: #47CF73; } }
+
+@-webkit-keyframes fill {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-color: #FF3C41; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-color: #47CF73; } }
+
+@-o-keyframes fill {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-color: #FF3C41; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-color: #47CF73; } }
+
+@-ms-keyframes fill {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-color: #FF3C41; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-color: #47CF73; } }
+
+@keyframes fill {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    border-color: #FF3C41; }
+  50% {
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    border-color: #47CF73; } }
+
+h4.happy-client {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  font-weight: 700; }
+  h4.happy-client:before {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -25px;
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #dadada;
+    border-radius: 4px; }
+  h4.happy-client:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 100%;
+    margin-left: 20px;
+    display: inline-block;
+    width: 710px;
+    height: 1px;
+    background-color: #dadada; }
+
+.navigation-owl-carousel {
+  text-align: right; }
+  .navigation-owl-carousel button {
+    background: unset;
+    color: #fff;
+    background-color: #98a3a3;
+    border-color: unset;
+    box-shadow: unset; }
+    .navigation-owl-carousel button:before {
+      font-size: 17px;
+      font-family: FontAwesome; }
+    .navigation-owl-carousel button:hover {
+      background-color: #e8645a; }
+
+.empty-space {
+  margin-top: -35px; }
+
+/*
+*
+*--------------------Footer----------------------*
+*
+*/
+footer {
+  background-color: #76c7c0;
+  color: #fff; }
+  footer .footer-wrap {
+    padding-top: 47px; }
+
+#widget_sp_image-2 {
+  overflow: hidden;
+  margin-bottom: 25px; }
+
+#contact_footer-2 span {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic; }
+  #contact_footer-2 span a {
+    color: #fff; }
+
+.header-menu-footer {
+  margin-top: -2px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #497e79; }
+
+ul.footer-menu {
+  list-style: none;
+  margin: unset;
+  padding: unset; }
+  ul.footer-menu li a {
+    color: #fff;
+    text-transform: capitalize; }
+  ul.footer-menu li:before {
+    font-family: FontAwesome;
+    content: "\f105";
+    padding-right: 14px; }
+
+#last_post-3 ul {
+  list-style: none;
+  padding: unset;
+  margin: unset; }
+  #last_post-3 ul li {
+    margin-bottom: 27px;
+    overflow: hidden; }
+    #last_post-3 ul li a {
+      display: inline-block;
+      overflow: hidden;
+      margin-right: 15px;
+      float: left; }
+    #last_post-3 ul li span {
+      color: #000; }
+
+.from-the-blog {
+  font-size: 20px;
+  margin: unset;
+  margin-bottom: 25px; }
+
+.end-footer {
+  background-color: #6AB3AC;
+  padding: 15px; }
+
+.socical-icon a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 20px; }
+  .socical-icon a:hover {
+    color: #e8645a; }
